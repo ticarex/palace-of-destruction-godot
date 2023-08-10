@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8bef3m1qvals"]
+
+[ext_resource type="PackedScene" uid="uid://55pkedg2nmu1" path="res://entities/player/player.tscn" id="1_em5on"]
+[ext_resource type="Texture2D" uid="uid://ckr0x4r3wrelp" path="res://assets/images/goblin.png" id="2_3c1oh"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_em5on")]
+position = Vector2(72, 73)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(0.125, 0.125)
+
+[node name="Goblin" type="Sprite2D" parent="."]
+position = Vector2(309, 12.5)
+scale = Vector2(14, 18.625)
+texture = ExtResource("2_3c1oh")
