@@ -25,11 +25,17 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _process(_delta):
-	if Input.is_action_just_pressed("shoot"):
-		var mouse_pos = get_global_mouse_position()
-		
-		var arrow = ARROW.instantiate()
-		arrow.position = position
-		arrow.direction = position.direction_to(mouse_pos)
-		get_parent().add_child(arrow)
-		arrow.look_at(mouse_pos)
+	$AnimationTree["parameters/conditions/shooting"] = Input.is_action_just_pressed("shoot")
+
+func _shooting():
+	var mouse_pos = get_global_mouse_position()
+	
+	var arrow = ARROW.instantiate()
+	arrow.position = position
+	arrow.direction = position.direction_to(mouse_pos)
+	get_parent().add_child(arrow)
+	arrow.look_at(mouse_pos)
+
+func _que_dor():
+	_shooting()
+	pass
