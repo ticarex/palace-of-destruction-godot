@@ -14,20 +14,23 @@ func _physics_process(_delta):
 		_walking = true
 		$AnimationTree["parameters/idle/blend_position"] = direction
 		$AnimationTree["parameters/walk/BlendSpace2D/blend_position"] = direction
+		$AnimationTree["parameters/attack/BlendSpace2D/blend_position"] = direction
 	else:
 		_walking = false
 		
 	$AnimationTree["parameters/conditions/idle"] = !_walking
 	$AnimationTree["parameters/conditions/walking"] = _walking
+	$AnimationTree["parameters/conditions/attack"] = Input.is_action_just_pressed("attack")
 		
 	velocity = direction * speed
 
 	move_and_slide()
 
 func _process(_delta):
-	$AnimationTree["parameters/conditions/shooting"] = Input.is_action_just_pressed("shoot")
+	## $AnimationTree["parameters/conditions/attack"] = Input.is_action_just_pressed("attack")
+	pass
 
-func _shooting():
+func _attacking():
 	var mouse_pos = get_global_mouse_position()
 	
 	var arrow = ARROW.instantiate()
@@ -35,7 +38,3 @@ func _shooting():
 	arrow.direction = position.direction_to(mouse_pos)
 	get_parent().add_child(arrow)
 	arrow.look_at(mouse_pos)
-
-func _que_dor():
-	_shooting()
-	pass
