@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8bef3m1qvals"]
 
-[ext_resource type="PackedScene" uid="uid://55pkedg2nmu1" path="res://entities/player/player.tscn" id="1_em5on"]
+[ext_resource type="PackedScene" uid="uid://guer0mal3kuf" path="res://entities/player/player.tscn" id="1_em5on"]
 [ext_resource type="Texture2D" uid="uid://ckr0x4r3wrelp" path="res://assets/images/goblin.png" id="2_3c1oh"]
 
 [node name="Node2D" type="Node2D"]

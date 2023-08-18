@@ -1,7 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://55pkedg2nmu1"]
+[gd_scene load_steps=45 format=3 uid="uid://guer0mal3kuf"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_50hoq"]
 [ext_resource type="Texture2D" uid="uid://dll0ajjbdtkeg" path="res://assets/images/archer.png" id="2_ewb8x"]
+[ext_resource type="Material" uid="uid://dkb5cipedu2ag" path="res://shaders/black_border/black_border.tres" id="2_vyen5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2v3m"]
 size = Vector2(5, 3)
@@ -549,13 +550,13 @@ motion_mode = 1
 script = ExtResource("1_50hoq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_vyen5")
 texture = ExtResource("2_ewb8x")
 hframes = 5
 vframes = 4
-frame = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 2.5)
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_y2v3m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

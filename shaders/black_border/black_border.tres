@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dkb5cipedu2ag"]
+
+[ext_resource type="Shader" path="res://shaders/black_border/black_border.gdshader" id="1_odf3f"]
+
+[sub_resource type="GDScript" id="GDScript_mxhj1"]
+
+[resource]
+shader = ExtResource("1_odf3f")
+shader_parameter/line_color = Vector4(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.125
+script = SubResource("GDScript_mxhj1")
